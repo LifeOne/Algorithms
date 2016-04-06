@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      console.log("Welcome Life");
+      var array = [2,3,6,2,3];
+
+      // console.log(pushFront(array, 1));
+      // console.log(insertAt(array, 1, 100));
+      // console.log(popFront(array));
+      console.log(removeAt(array, 2));
+    });
+
+
+
+    // pushFront(array, value)
+    // PUSH VALUE TO FRONT OF ARRAY
+  function pushFront(arr, val) {
+      console.log("The original array is: " + arr);
+      arr.push(arr[arr.length-1]);
+      for(var i = arr.length - 1; i > 0; i--) {
+        arr[i] = arr[i-1];
+      }
+      arr[0] = val;
+      return arr;
+    }
+
+    // popFront(array)
+    // POP THE FIRST KEY IN THE ARRAY
+    function popFront(arr) {
+      console.log("The original array is: " + arr);
+      for(var i = 0; i < arr.length - 1; i++) {
+        arr[i] = arr[i+1];
+      }
+      arr.pop();
+      return arr;
+    }
+
+    // insertAt(array, index, value)
+    // INSERT VALUE AT THE GIVEN INDEX IN THE ARRAY
+    function insertAt(arr, ind, val) {
+      console.log("The original array is: " + arr);
+      for(var i = arr.length; i > ind; i--) {
+        arr[i] = arr[i-1];
+      }
+      arr[ind] = val;
+      return arr;
+    }
+
+    // removeAt(array, index)
+    // POP THE VALUE AT THE GIVEN INDEX IN THE ARRAY
+    function removeAt(arr, ind) {
+      console.log("The original array is: " + arr);
+      for(var i = ind; i < arr.length - 1; i++) {
+        arr[i] = arr[i+1];
+      }
+      arr.pop();
+      return arr;
+    }
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

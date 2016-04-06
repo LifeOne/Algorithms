@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      console.log("Welcome Life");
+      var newArray = [5,-1,3,-7,6,-5,-5,4,-6,-6,-5,-3,5,-1];
+      // console.log(reverseArray(newArray)); 
+      console.log(removeNegatives(newArray));
+    });
+
+
+
+    // reverseArray(array)
+    // REVERSE INDEXES IN THE ARRAY [1,2,3] -> [3,2,1]
+    function reverseArray(array) {
+      var counter = 1;
+      console.log("Original array: " + array);
+      for(var i = 0; i < Math.floor(array.length / 2); i++) {
+        var temp = array[i];
+        array[i] = array[array.length - counter];
+        array[array.length - counter] = temp;
+        counter++;
+      }
+      return array;
+    }
+
+
+    // removeNegatives(array)
+    // REMOVE ALL NEGATIVE NUMBERS IN THE ARRAY
+    function removeNegatives(array) {
+      var counter = 0;
+      console.log("Original array: " + array);
+      for(var i = 0; i < array.length; i++) {
+        if(array[i] < 0) {
+          counter++;
+          for(var j = i; j < array.length; j++) {
+            array[j] = array[j+1];
+            if(array[j] < 0) {
+              i--;
+            }
+          }
+        }
+      }
+      for(var i = 0; i < counter; i++) {
+        array.pop();
+      }
+      return array;
+    }
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
